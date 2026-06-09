@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinSight AI | Market Intelligence Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div id="toastHost"></div>
+
+  <header class="topbar">
+    <div class="brand" id="homeLogo"><span class="brand-mark">⌁</span><span>FinSight AI</span></div>
+    <div class="search-wrap">
+      <span>⌕</span>
+      <input id="searchInput" placeholder="Search stocks, ETFs, sectors... try NIFTY, AAPL, TSLA" autocomplete="off" />
+      <div id="searchResults" class="search-results hidden"></div>
+    </div>
+    <div class="top-actions">
+      <button id="betaBtn" class="pill small active">✓ Beta</button>
+      <button id="themeBtn" class="icon-btn" title="Theme">☾</button>
+      <button id="feedbackBtn" class="icon-btn" title="Feedback">▣</button>
+      <button id="profileBtn" class="avatar" title="Sign in with Google">G</button>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="side-title">
+        <h2>Lists</h2>
+        <button id="addListBtn" class="icon-btn">＋</button>
+        <button id="collapseSidebarBtn" class="icon-btn">↔</button>
+      </div>
+
+      <section class="side-section">
+        <div class="section-head">
+          <h3>Watchlist</h3>
+          <button id="addWatchBtn">＋</button>
+        </div>
+        <div id="watchlistBox" class="empty">This list is empty</div>
+      </section>
+
+      <section class="side-section">
+        <div class="section-head"><h3>Equity sectors</h3><button data-toggle="sectorList">⌃</button></div>
+        <div id="sectorList" class="list"></div>
+      </section>
+
+      <section class="side-section">
+        <div class="section-head"><h3>Market Lists</h3><button data-toggle="marketList">⌃</button></div>
+        <div id="marketList" class="list"></div>
+      </section>
+
+      <p class="fineprint">AI content may include mistakes. <a id="learnMoreLink">Learn more</a></p>
+    </aside>
+
+    <div class="resize-handle" id="sidebarHandle"><div class="rh-grip"></div></div>
+    <main class="main">
+      <nav class="tabs" id="regionTabs">
+        <button data-region="US">US</button>
+        <button data-region="Europe">Europe</button>
+        <button data-region="India" class="active">India</button>
+        <button data-region="Currencies">Currencies</button>
+        <button data-region="Crypto">Crypto</button>
+        <button data-region="Futures">Futures</button>
+      </nav>
+
+      <div id="homeView">
+        <div id="marketCards" class="market-cards"></div>
+        <section class="summary-card">
+          <div class="summary-head">
+            <h2 id="summaryTitle">India market summary</h2>
+            <div class="source-stack"><span>📰</span><span>📊</span><b>3 sites</b></div>
+          </div>
+          <h3 id="summaryHeadline">Domestic benchmarks rally on easing oil prices</h3>
+          <p id="summaryText">Indian equity indices experienced a strong session as banking, auto and infrastructure shares supported momentum. Lower crude oil prices and stable global cues improved market sentiment.</p>
+          <button id="diveBtn" class="pill">⌕ Dive deeper on this topic with AI</button>
+          <div class="accordion">
+            <button class="acc">Banking and auto sectors lead market gains <span>⌄</span></button>
+            <div class="panel">Banking and auto counters showed strong buying interest. FinSight AI flags these sectors as short-term momentum leaders.</div>
+            <button class="acc">Retail fuel price hikes stoke inflation concerns <span>⌄</span></button>
+            <div class="panel">Inflation-sensitive sectors may see volatility if energy costs remain elevated.</div>
+            <button class="acc">Precious metals climb amid dollar weakness <span>⌄</span></button>
+            <div class="panel">Gold and silver counters can benefit from safe-haven demand when currency volatility increases.</div>
+          </div>
+        </section>
+
+        <section class="grid-2">
+          <div class="card">
+            <h2>Upcoming earnings</h2>
+            <div id="earningsList"></div>
+            <button id="moreEarnings" class="link-btn">More upcoming earnings ›</button>
+          </div>
+          <div class="card">
+            <h2>AI Risk Heatmap</h2>
+            <canvas id="riskChart"></canvas>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="card-head"><h2>More news stories</h2><button id="showMoreNews" class="link-btn">Show more ⌄</button></div>
+          <div id="newsGrid" class="news-grid"></div>
+        </section>
+
+        <section class="three-columns">
+          <div class="card"><h2>Most active</h2><div id="activeList"></div></div>
+          <div class="card"><h2>Daily gainers</h2><div id="gainersList"></div></div>
+          <div class="card"><h2>Daily losers</h2><div id="losersList"></div></div>
+        </section>
+      </div>
+
+      <div id="detailView" class="hidden">
+        <div class="breadcrumb"><button id="backHome">← Home</button><span id="tickerPath">NIFTY_ENERGY:INDEXNSE</span></div>
+        <div class="detail-head">
+          <div>
+            <h1 id="detailName">Nifty Energy</h1>
+            <div class="price-line"><span id="detailPrice">40,520.85</span> <span id="detailChange" class="green">+0.70% Today</span></div>
+            <p id="detailTime">25 May, 12:45:22 UTC+5:30</p>
+          </div>
+          <div class="detail-actions">
+            <button id="addCurrentBtn" class="pill">✓ Added</button>
+            <div id="addMenu" class="dropdown hidden">
+              <label><input type="checkbox" id="watchCheck"> Watchlist</label>
+              <button id="newListBtn" class="pill">＋ New list</button>
+              <button id="doneListBtn" class="pill active">✓ Done</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-toolbar">
+            <button id="chartTypeBtn">▰ Area ▾</button>
+            <div id="chartTypeMenu" class="dropdown hidden">
+              <button data-chart-type="line">⌁ Line</button>
+              <button data-chart-type="area">▰ Area</button>
+              <button data-chart-type="candle">▥ Candle</button>
+              <button data-chart-type="bar">▮ Bar</button>
+            </div>
+            <button id="compareBtn">≋ Compare ▾</button>
+            <div id="compareMenu" class="dropdown hidden">
+              <button data-compare="NIFTY 50">NIFTY 50</button>
+              <button data-compare="SENSEX">SENSEX</button>
+              <button data-compare="NASDAQ">NASDAQ</button>
+              <button data-compare="BTC">BTC</button>
+            </div>
+            <button id="indicatorBtn">▥ Indicators ▾</button>
+            <div id="indicatorMenu" class="dropdown hidden">
+              <label><input type="checkbox" data-indicator="ma7" checked> 7 Day MA</label>
+              <label><input type="checkbox" data-indicator="ma30"> 30 Day MA</label>
+              <label><input type="checkbox" data-indicator="vol"> Volume</label>
+            </div>
+          </div>
+          <canvas id="priceChart"></canvas>
+          <div class="range-tabs" id="rangeTabs">
+            <button data-range="1D" class="active">1D</button>
+            <button data-range="5D">5D</button>
+            <button data-range="1M">1M</button>
+            <button data-range="6M">6M</button>
+            <button data-range="YTD">YTD</button>
+            <button data-range="1Y">1Y</button>
+            <button data-range="5Y">5Y</button>
+            <button data-range="MAX">MAX</button>
+          </div>
+        </div>
+
+        <section class="overview">
+          <h2>Overview</h2>
+          <div id="overviewGrid"></div>
+        </section>
+
+        <section class="card">
+          <h2>News stories</h2>
+          <div id="detailNews" class="news-grid"></div>
+        </section>
+      </div>
+    </main>
+
+    <div class="resize-handle" id="researchHandle"><div class="rh-grip"></div></div>
+    <aside class="research">
+      <div class="research-head">
+        <h1>Research</h1>
+        <button id="composeBtn" class="icon-btn">✎</button>
+        <button id="historyBtn" class="icon-btn">↶</button>
+        <button id="expandResearchBtn" class="icon-btn">⛶</button>
+      </div>
+      <h2 id="researchGreeting">Hi, ask any financial question</h2>
+      <div id="questionList"></div>
+
+      <h3>Explore what's possible</h3>
+      <button class="pill explore" data-action="deep">🔎 Deep Search</button>
+      <button class="pill explore" data-action="watch">📈 Analyse my watchlist</button>
+      <button class="pill explore" data-action="ask">⌕ Search or ask anything</button>
+
+      <div id="assistantChat" class="chat"></div>
+      <div class="askbox">
+        <textarea id="askInput" placeholder="Ask anything"></textarea>
+        <button id="attachBtn">＋</button>
+        <button id="sendAskBtn">➤</button>
+      </div>
+    </aside>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-box">
+      <button id="modalClose" class="close">×</button>
+      <h2 id="modalTitle">Title</h2>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

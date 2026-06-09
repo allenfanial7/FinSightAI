@@ -1,0 +1,502 @@
+*{box-sizing:border-box} :root{--bg:#0f1117;--panel:#181a22;--panel2:#20232d;--muted:#a9adbb;--text:#f4f6fb;--line:#2b2f3a;--green:#8fed92;--red:#ff8fa0;--blue:#9fc5ff;--accent:#8ea7ff;--shadow:0 20px 60px rgba(0,0,0,.35)}body.light{--bg:#f6f8fc;--panel:#fff;--panel2:#eef2f8;--muted:#5c6475;--text:#161a24;--line:#dde3ee;--green:#117d35;--red:#b3263e;--blue:#2457a6;--accent:#325ee8}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text);overflow:hidden}button,input,textarea{font:inherit;color:inherit}button{cursor:pointer;border:0;background:none}.topbar{height:78px;display:grid;grid-template-columns:330px 1fr 380px;align-items:center;padding:0 22px;border-bottom:1px solid var(--line);gap:18px}.brand{font-size:25px;font-weight:700;display:flex;align-items:center;gap:10px}.brand-mark{color:var(--green);font-size:32px}.brand sup{font-size:11px;border:1px solid var(--muted);border-radius:6px;padding:2px 5px}.search-wrap{position:relative;max-width:780px;background:var(--panel2);border-radius:30px;display:flex;align-items:center;gap:12px;padding:0 18px;height:54px}.search-wrap input{background:transparent;border:0;outline:0;width:100%;font-size:18px}.top-actions{display:flex;justify-content:flex-end;gap:10px;align-items:center}.pill{background:#2b2f3d;border:1px solid #393d4c;padding:10px 18px;border-radius:22px;font-weight:700}.pill.small{padding:7px 18px;font-size:13px}.pill.active,.active{background:#35405b!important;color:#dbe7ff}.icon-btn,.avatar{width:42px;height:42px;border-radius:50%;background:var(--panel2);display:inline-flex;align-items:center;justify-content:center;font-weight:800}.avatar{background:#6675d8}.app-shell{height:calc(100vh - 78px);display:grid;grid-template-columns:320px 8px 1fr 8px 690px}.sidebar,.research{border-right:1px solid var(--line);padding:18px 22px;overflow:auto}.research{border-right:0;border-left:1px solid var(--line)}.main{overflow:auto;padding:18px 26px}.side-title,.section-head,.research-head,.card-head,.summary-head,.detail-head,.chart-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px}.side-title h2,.research h1{font-size:28px;margin:0 0 8px}.side-section{margin:18px 0}.section-head h3{font-size:18px;margin:0}.empty{color:var(--muted);font-size:14px;padding:10px 0}.list{display:flex;flex-direction:column;gap:4px}.row-item{display:grid;grid-template-columns:1.1fr 80px 72px;gap:8px;align-items:center;padding:10px 8px;border-radius:10px;border-bottom:1px solid rgba(150,150,150,.08)}.row-item:hover,.row-item.selected{background:var(--panel2)}.spark{height:34px;width:76px}.sub{display:block;color:var(--muted);font-size:12px;margin-top:2px}.green{color:var(--green)}.red{color:var(--red)}.fineprint{font-size:12px;color:var(--muted);position:sticky;bottom:0;background:var(--bg);padding-top:18px}.tabs{display:flex;gap:18px;margin-bottom:18px}.tabs button,.range-tabs button{padding:9px 18px;border-radius:22px;color:var(--muted);font-weight:700}.market-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}.market-card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px;min-height:150px}.market-card h3{margin:0 0 4px}.market-card .value{font-size:18px}.mini-chart{height:52px;width:100%;margin-top:8px}.summary-card,.card,.chart-card{background:transparent;border-bottom:1px solid var(--line);padding:22px 0;margin-bottom:22px}.summary-card h2,.card h2{margin:0 0 16px}.summary-card p{font-size:18px;line-height:1.45;max-width:850px}.source-stack{display:flex;gap:4px;align-items:center;color:var(--muted)}.accordion{margin-top:24px;border-top:1px solid var(--line)}.acc{width:100%;padding:18px 0;text-align:left;font-weight:800;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}.panel{display:none;color:var(--muted);padding:0 0 16px}.panel.open{display:block}.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:26px}.three-columns{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}.news-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 34px}.news{padding:6px 0}.news b{display:block;line-height:1.35}.news small{color:var(--muted)}.earning{display:grid;grid-template-columns:60px 1fr 90px 90px;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}.datebox{background:var(--panel2);border-radius:9px;text-align:center;padding:8px}.stock-line{display:grid;grid-template-columns:1fr 80px 65px;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.research h2{font-size:21px;margin:22px 0 28px}.qbtn{width:100%;background:var(--panel);border-radius:13px;margin:6px 0;padding:14px 16px;text-align:left;font-weight:700;display:flex;justify-content:space-between}.explore{display:block;width:max-content;margin:10px 0}.chat{height:260px;overflow:auto;margin-top:22px}.msg{background:var(--panel2);border-radius:18px;padding:13px 16px;margin:10px 0;line-height:1.45;max-width:88%}.msg.user{margin-left:auto;background:#30405f}.askbox{height:154px;background:var(--panel);border:1px solid var(--line);border-radius:30px;display:grid;grid-template-columns:45px 1fr 45px;align-items:end;gap:8px;padding:16px;margin-top:16px}.askbox textarea{grid-column:1/4;resize:none;background:transparent;border:0;outline:0;height:60px;font-size:19px}.askbox button{background:var(--panel2);border-radius:50%;width:36px;height:36px}.askbox #sendAskBtn{grid-column:3}.hidden{display:none!important}.breadcrumb{display:flex;gap:14px;color:var(--muted);margin:6px 0 14px}.breadcrumb button{font-weight:700}.detail-head h1{margin:0;font-size:24px}.price-line{font-size:25px;font-weight:800}.price-line span:first-child{font-size:30px}.detail-actions{position:relative}.dropdown{position:absolute;z-index:10;background:var(--panel2);border:1px solid var(--line);border-radius:20px;padding:14px;box-shadow:var(--shadow);min-width:190px;display:flex;flex-direction:column;gap:8px}.detail-actions .dropdown{right:0;top:48px}.chart-toolbar{justify-content:flex-start;background:var(--panel);border-radius:12px 12px 0 0;padding:12px 18px;position:relative}.chart-toolbar .dropdown{top:48px}.chart-toolbar .dropdown:nth-of-type(1){left:10px}.chart-toolbar .dropdown button,.chart-toolbar .dropdown label{padding:10px;text-align:left;border-radius:8px}.chart-toolbar .dropdown button:hover{background:var(--panel)}.chart-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:0}.chart-card canvas{padding:16px;max-height:330px}.range-tabs{border-top:1px solid var(--line);padding:10px 16px;display:flex;gap:8px}.overview{padding:12px 0 24px}.overview h2{border-bottom:2px solid #9fc5ff;width:max-content;padding-bottom:14px}.overview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.ov{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:14px 8px}.search-results{position:absolute;top:62px;left:0;right:0;background:var(--panel);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);z-index:50;overflow:hidden}.search-result{padding:14px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}.search-result:hover{background:var(--panel2)}.modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;z-index:100}.modal-box{background:var(--panel);border:1px solid var(--line);border-radius:22px;width:min(620px,92vw);padding:28px;box-shadow:var(--shadow);position:relative}.close{position:absolute;right:16px;top:14px;background:var(--panel2);width:34px;height:34px;border-radius:50%}#toastHost{position:fixed;right:22px;top:90px;z-index:200}.toast{background:var(--panel2);border:1px solid var(--line);padding:12px 16px;border-radius:14px;margin:8px;box-shadow:var(--shadow)}body.full-research .app-shell{grid-template-columns:320px 8px 0 8px 1fr}body.full-research .main{display:none}body.sidebar-collapsed .app-shell{grid-template-columns:70px 8px 1fr 8px 690px}body.sidebar-collapsed .sidebar *:not(.side-title):not(.side-title h2):not(#collapseSidebarBtn){display:none}@media(max-width:1200px){body{overflow:auto}.app-shell{height:auto;display:block}.topbar{grid-template-columns:1fr}.sidebar,.research,.main{border:0}.market-cards,.grid-2,.three-columns,.news-grid{grid-template-columns:1fr}}
+/* Clean header and improved light/dark theme visibility */
+body.light .pill{background:#ffffff;border-color:#d9e1ef;color:#1f2937;box-shadow:0 1px 4px rgba(15,23,42,.05)}
+body.light .pill.active, body.light .active{background:#33415f!important;color:#ffffff!important}
+body.light .explore{background:#ffffff;color:#111827;border:1px solid #d9e1ef}
+body.light .qbtn{background:#ffffff;color:#111827;border:1px solid #e3e8f2}
+body.light .icon-btn{background:#eef2f8;color:#111827;border:1px solid #e0e6f0}
+body.light .avatar{background:#5f6fd6;color:#ffffff}
+body.light .msg.user{background:#dfe8ff;color:#14213d}
+body.light .askbox, body.light .search-wrap, body.light .dropdown, body.light .modal-box{background:#ffffff;color:#111827;border-color:#d9e1ef}
+body.light .askbox button{background:#eef2f8;color:#111827}
+body.light .chart-toolbar{background:#ffffff;color:#111827}
+body.light .range-tabs button{color:#42526e}
+body.light .row-item:hover, body.light .row-item.selected{background:#eef3ff}
+.feedback-label{display:block;font-weight:700;margin:0 0 10px}.feedback-text{width:100%;min-height:130px;padding:14px;border-radius:12px;background:var(--panel2);border:1px solid var(--line);outline:0;resize:vertical;margin-bottom:12px}.brand sup{display:none}.top-actions{gap:12px}
+
+
+/* Final custom polish: Google Finance-like clean UI, no edge sliders, readable light/dark theme */
+html, body { width: 100%; height: 100%; }
+body { font-size: 14px; }
+body, .sidebar, .main, .research, .chat, .search-results { scrollbar-width: none; -ms-overflow-style: none; }
+body::-webkit-scrollbar, .sidebar::-webkit-scrollbar, .main::-webkit-scrollbar, .research::-webkit-scrollbar, .chat::-webkit-scrollbar, .search-results::-webkit-scrollbar { width: 0; height: 0; display: none; }
+.topbar{height:74px;grid-template-columns:300px minmax(320px, 1fr) 280px;padding:0 18px;}
+.brand{font-size:22px;font-weight:700}.brand-mark{font-size:25px}.search-wrap{height:48px;max-width:760px}.search-wrap input{font-size:16px}.app-shell{height:calc(100vh - 74px);grid-template-columns:310px 8px minmax(560px,1fr) 8px 610px}.side-title h2,.research h1{font-size:25px}.research h2{font-size:19px}.section-head h3{font-size:16px}.row-item{font-size:14px}.detail-head h1{font-size:22px}.price-line{font-size:23px}.price-line span:first-child{font-size:28px}.chart-card canvas{max-height:315px}.qbtn{position:relative;overflow:hidden;border:1px solid transparent;transition:.2s ease}.qbtn:hover,.qbtn.active{transform:translateY(-1px);border-color:rgba(142,167,255,.45);background:linear-gradient(90deg,rgba(142,167,255,.25),rgba(143,237,146,.14),var(--panel))}.explore.active{background:linear-gradient(90deg,rgba(142,167,255,.35),rgba(143,237,146,.2));border-color:rgba(142,167,255,.5)}
+body.light .qbtn:hover, body.light .qbtn.active{background:linear-gradient(90deg,#e7efff,#eefaf0,#ffffff)!important;color:#111827!important;border-color:#b9cdfc;box-shadow:0 4px 14px rgba(50,94,232,.08)}
+body.light .explore.active{background:linear-gradient(90deg,#dfe9ff,#ecfff0)!important;color:#111827!important;border-color:#b9cdfc}.top-actions #feedbackBtn::before{content:'💬';font-size:17px}.top-actions #feedbackBtn{font-size:0}.avatar{background:#6374d7;color:#fff}.modal-box{max-height:90vh;overflow:auto}.google-login-card{display:flex;gap:14px;align-items:center;padding:14px;border:1px solid var(--line);border-radius:16px;background:var(--panel2);margin:12px 0}.google-g{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#fff;color:#4285f4;font-weight:900}.profile-input{width:100%;padding:12px;border-radius:12px;background:var(--panel);border:1px solid var(--line);outline:0;color:var(--text)}body.light .profile-input{background:#fff;color:#111827}.chart-toolbar button,.range-tabs button{font-size:13px}.news b{font-size:14px}.summary-card p{font-size:16px}.market-card .value{font-size:16px}
+@media(max-width:1400px){.app-shell{grid-template-columns:285px 8px minmax(520px,1fr) 8px 520px}.topbar{grid-template-columns:280px 1fr 230px}}
+
+
+/* =====================================================
+   HOVER EFFECTS — FinSight AI
+   ===================================================== */
+
+/* --- Row items: Equity Sectors & Market Lists --- */
+.row-item {
+  transition: transform 0.17s ease, background 0.17s ease, border-left 0.15s ease;
+  border-left: 3px solid transparent;
+  cursor: pointer;
+}
+.row-item:hover {
+  background: var(--panel2) !important;
+  transform: translateX(5px);
+  border-left: 3px solid var(--accent);
+}
+.row-item:hover .sub { color: var(--accent); }
+
+/* --- Section headings (sidebar) --- */
+.section-head h3 {
+  transition: color 0.18s ease, letter-spacing 0.18s ease;
+  cursor: default;
+}
+.section-head h3:hover { color: var(--accent); letter-spacing: 0.5px; }
+
+/* --- Sidebar main title --- */
+.side-title h2 {
+  transition: color 0.2s ease;
+  cursor: default;
+}
+.side-title h2:hover { color: var(--accent); }
+
+/* --- Market summary + card headings --- */
+.card h2,
+.summary-card h2,
+#summaryTitle,
+#summaryHeadline {
+  display: inline-block;
+  transition: color 0.2s ease;
+  cursor: default;
+}
+.card h2:hover,
+.summary-card h2:hover,
+#summaryTitle:hover  { color: var(--accent); }
+#summaryHeadline:hover { color: var(--blue); }
+
+/* --- Upcoming Earnings rows --- */
+.earning {
+  cursor: pointer;
+  transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.15s ease;
+  border-radius: 10px;
+  position: relative;
+}
+.earning:hover {
+  background: var(--panel2);
+  transform: translateX(4px);
+  box-shadow: inset 3px 0 0 var(--green);
+}
+.earning:hover b { color: var(--accent); }
+
+/* --- News items --- */
+.news {
+  cursor: pointer;
+  transition: background 0.17s ease, transform 0.17s ease;
+  padding: 10px 8px;
+  border-radius: 8px;
+}
+.news:hover { background: var(--panel2); transform: translateY(-2px); }
+.news:hover b { color: var(--accent); }
+.news:hover small { color: var(--text); }
+
+/* --- Market cards (index cards at top) --- */
+.market-card {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.market-card:hover {
+  transform: translateY(-4px) scale(1.015);
+  box-shadow: 0 10px 36px rgba(142,167,255,.18);
+  border-color: var(--accent);
+}
+.market-card:hover h3 { color: var(--accent); }
+
+/* --- Stock movers (Most active / Gainers / Losers) --- */
+.stock-line {
+  cursor: pointer;
+  transition: background 0.17s ease, transform 0.17s ease;
+  border-radius: 8px;
+  padding-left: 8px;
+}
+.stock-line:hover { background: var(--panel2); transform: translateX(4px); }
+.stock-line:hover b { color: var(--accent); }
+
+/* --- Three column section headings --- */
+.three-columns .card h2 { transition: color 0.18s ease; cursor: default; }
+.three-columns .card h2:hover { color: var(--accent); }
+
+/* --- Accordion buttons --- */
+.acc {
+  transition: background 0.18s ease, color 0.18s ease, padding-left 0.18s ease;
+  border-radius: 8px;
+}
+.acc:hover { background: var(--panel2); color: var(--accent); padding-left: 12px; }
+
+/* --- Overview grid rows --- */
+.ov {
+  cursor: default;
+  transition: background 0.17s ease, padding-left 0.17s ease;
+  border-radius: 6px;
+}
+.ov:hover { background: var(--panel2); padding-left: 12px; }
+.ov:hover span:first-child { color: var(--accent); }
+
+/* --- Overview section heading --- */
+.overview h2 {
+  transition: color 0.18s ease, border-bottom-color 0.18s ease;
+  cursor: default;
+}
+.overview h2:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* --- Region tabs --- */
+#regionTabs button {
+  transition: background 0.17s ease, color 0.17s ease, transform 0.15s ease;
+}
+#regionTabs button:hover:not(.active) {
+  background: var(--panel2);
+  color: var(--text);
+  transform: translateY(-2px);
+}
+
+/* --- Range tabs (chart) --- */
+#rangeTabs button {
+  transition: background 0.17s ease, color 0.17s ease;
+}
+#rangeTabs button:hover:not(.active) {
+  background: var(--panel2);
+  color: var(--text);
+}
+
+/* --- Chart toolbar buttons --- */
+.chart-toolbar > button {
+  transition: background 0.17s ease, color 0.17s ease;
+  border-radius: 8px;
+  padding: 6px 12px;
+}
+.chart-toolbar > button:hover { background: var(--panel2); color: var(--text); }
+
+/* --- Brand logo --- */
+.brand {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  display: inline-flex;
+}
+.brand:hover { transform: scale(1.05); }
+.brand:hover .brand-mark { filter: brightness(1.35) drop-shadow(0 0 6px var(--green)); }
+
+/* --- Detail stock title & price --- */
+.detail-head h1 {
+  transition: color 0.18s ease, text-shadow 0.18s ease;
+  cursor: default;
+}
+.detail-head h1:hover {
+  color: var(--accent);
+  text-shadow: 0 0 22px rgba(142,167,255,.35);
+}
+
+/* --- Breadcrumb back button --- */
+.breadcrumb button {
+  transition: color 0.17s ease, transform 0.17s ease;
+}
+.breadcrumb button:hover { color: var(--accent); transform: translateX(-4px); }
+
+/* --- Ticker path --- */
+#tickerPath {
+  transition: color 0.17s ease;
+  cursor: default;
+}
+#tickerPath:hover { color: var(--accent); }
+
+/* --- Research headings --- */
+.research h1 {
+  transition: color 0.2s ease;
+  cursor: default;
+}
+.research h1:hover { color: var(--accent); }
+
+#researchGreeting {
+  transition: color 0.2s ease;
+  cursor: default;
+}
+#researchGreeting:hover { color: var(--blue); }
+
+/* --- More earnings / Show more links --- */
+.link-btn {
+  transition: color 0.17s ease, transform 0.17s ease;
+  display: inline-block;
+}
+.link-btn:hover { color: var(--accent); transform: translateX(4px); }
+
+/* --- Explore buttons --- */
+.explore {
+  transition: background 0.17s ease, transform 0.17s ease, box-shadow 0.17s ease;
+}
+.explore:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 18px rgba(142,167,255,.2);
+}
+
+/* =====================================================
+   TOOLTIP COMPONENT
+   ===================================================== */
+.finsight-tooltip {
+  position: fixed;
+  background: var(--panel2);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 13px;
+  padding: 12px 16px;
+  font-size: 12.5px;
+  line-height: 1.6;
+  box-shadow: 0 12px 40px rgba(0,0,0,.38);
+  pointer-events: none;
+  z-index: 9999;
+  max-width: 230px;
+  opacity: 0;
+  transform: translateY(6px) scale(0.97);
+  transition: opacity 0.16s ease, transform 0.16s ease;
+}
+.finsight-tooltip.tt-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.finsight-tooltip .tt-title {
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--accent);
+  margin-bottom: 7px;
+}
+.finsight-tooltip .tt-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 3px 0;
+}
+.finsight-tooltip .tt-row span { color: var(--muted); }
+.finsight-tooltip .tt-row b { color: var(--text); }
+.finsight-tooltip .tt-badge {
+  display: inline-block;
+  margin-top: 7px;
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(142,167,255,.18);
+  color: var(--accent);
+}
+
+
+/* =====================================================
+   RESIZE HANDLES — sidebar & research panels
+   ===================================================== */
+.resize-handle {
+  width: 8px;
+  background: transparent;
+  cursor: col-resize;
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s ease;
+  flex-shrink: 0;
+}
+.resize-handle:hover,
+.resize-handle.rh-dragging {
+  background: rgba(142,167,255,.13);
+}
+
+/* The 3-dot grip pill */
+.rh-grip {
+  width: 4px;
+  height: 48px;
+  border-radius: 4px;
+  background: var(--line);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: background 0.18s ease, height 0.18s ease, box-shadow 0.18s ease;
+  position: relative;
+}
+.rh-grip::before,
+.rh-grip::after,
+.rh-grip-dot {
+  content: '';
+  display: block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--muted);
+  transition: background 0.18s ease;
+}
+/* 3 dots via box-shadow trick */
+.rh-grip::before {
+  box-shadow: 0 -8px 0 var(--muted), 0 8px 0 var(--muted);
+}
+.rh-grip::after { display: none; }
+
+.resize-handle:hover .rh-grip,
+.resize-handle.rh-dragging .rh-grip {
+  background: var(--accent);
+  height: 64px;
+  box-shadow: 0 0 10px rgba(142,167,255,.35);
+}
+.resize-handle:hover .rh-grip::before,
+.resize-handle.rh-dragging .rh-grip::before {
+  box-shadow: 0 -8px 0 #fff, 0 8px 0 #fff;
+  background: #fff;
+}
+
+/* Hide sidebar handle when sidebar is collapsed */
+body.sidebar-collapsed #sidebarHandle { display: none; }
+/* Hide both when in full-research mode */
+body.full-research #sidebarHandle { display: none; }
+
+/* Prevent text selection while dragging */
+body.rh-resizing * { user-select: none !important; }
+body.rh-resizing { cursor: col-resize !important; }
+
+
+/* =====================================================
+   GHOST HOVER — Upcoming Earnings
+   ===================================================== */
+
+/* Reset the old solid earning hover so ghost takes over fully */
+.earning:hover {
+  background: transparent !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Ghost layer via ::before pseudo-element */
+.earning {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+}
+.earning::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: linear-gradient(
+    110deg,
+    rgba(142, 167, 255, 0.00) 0%,
+    rgba(142, 167, 255, 0.09) 40%,
+    rgba(143, 237, 146, 0.06) 70%,
+    rgba(142, 167, 255, 0.00) 100%
+  );
+  border: 1px solid transparent;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition:
+    opacity     0.22s ease,
+    transform   0.22s ease,
+    border-color 0.22s ease;
+  pointer-events: none;
+}
+.earning:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+  border-color: rgba(142, 167, 255, 0.22);
+}
+
+/* Ghost shimmer sweep on hover */
+.earning::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -60%;
+  width: 40%; height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,255,255,0.06) 50%,
+    transparent 100%
+  );
+  transform: skewX(-18deg);
+  opacity: 0;
+  transition: opacity 0.1s ease;
+  pointer-events: none;
+}
+.earning:hover::after {
+  opacity: 1;
+  animation: earningShimmer 0.55s ease forwards;
+}
+@keyframes earningShimmer {
+  0%   { left: -60%; }
+  100% { left: 120%; }
+}
+
+/* Subtle upward lift + left accent bar */
+.earning:hover {
+  transform: translateX(3px) !important;
+}
+.earning:hover .datebox {
+  background: rgba(142,167,255,.18);
+  color: var(--accent);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.earning:hover .datebox b {
+  color: var(--accent);
+}
+
+/* Company name glow on hover */
+.earning:hover div:not(.datebox) > b {
+  color: var(--accent);
+  text-shadow: 0 0 12px rgba(142,167,255,.35);
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+/* EPS / Rev sub-labels brighten */
+.earning:hover .sub {
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+/* Light mode ghost adjustments */
+body.light .earning::before {
+  background: linear-gradient(
+    110deg,
+    rgba(50, 94, 232, 0.00) 0%,
+    rgba(50, 94, 232, 0.07) 40%,
+    rgba(17, 125, 53, 0.04) 70%,
+    rgba(50, 94, 232, 0.00) 100%
+  );
+}
+body.light .earning::after {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(50,94,232,0.06) 50%,
+    transparent 100%
+  );
+}
+body.light .earning:hover div:not(.datebox) > b {
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(50,94,232,.2);
+}
+
+
+/* =====================================================
+   TOOLTIP — "Click to explore" button (matches screenshot)
+   ===================================================== */
+.tt-explore-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(160,170,200,0.35);
+  cursor: pointer;
+  pointer-events: none; /* tooltip is non-interactive, purely visual */
+  letter-spacing: 0.2px;
+  transition: none;
+}
+
+/* Remove the old .tt-badge since we replaced it */
+.finsight-tooltip .tt-badge { display: none; }
